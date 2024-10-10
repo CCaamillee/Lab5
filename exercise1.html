@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile face</title>
+    <style>
+        canvas{
+            background-color:#98fb98 ;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="Smile" width="400" height="400"> This text is displayed if your broswer does not support HTML5 canvas</canvas>
+    <script>
+        const canvas=document.getElementById('Smile');
+        const ctx=canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.arc(200,200,150,0,Math.PI * 2,false);
+        ctx.fillStyle='yellow';
+        ctx.strokrStyle='black';
+        ctx.fill();
+        ctx.lineWidth = 2; 
+        ctx.strokeStyle = 'black'; 
+        ctx.stroke(); 
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(150, 150, 10, 0, Math.PI * 2, false); // Left eye
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(250, 150, 10, 0, Math.PI * 2, false); // Right eye
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(200,180);
+        ctx.lineTo(200,230);
+        ctx.lineWidth=2;
+        ctx.strokeStyle='black';
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(200,230,50,0,Math.PI,false);
+        ctx.strokeStyle='black';
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.font = 'bold 20px Arial';
+        ctx.fillStyle = 'green';
+        ctx.textAlign = 'center';
+        ctx.fillText('The Canvas brought me to life!', 200, 380);
+    </script>
+</body>
+</html>
